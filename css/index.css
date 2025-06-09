@@ -3,7 +3,7 @@
     src: url(../res/fon/Montserrat-Medium.ttf) format('truetype');
 }
 
-bg-image {
+.bg-image {
   background-image: url(../res/img/professional-nerd.jpg); /*img*/
   filter: blur(12px);    /* blur */
   -webkit-filter: blur(12px);

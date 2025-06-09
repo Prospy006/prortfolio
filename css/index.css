@@ -16,7 +16,7 @@ h1 {
     margin-top: 20px;
 }
 
-.bg-image {
+bg-image {
   background-image: url(../res/img/professional\ nerd.jpg); /*img*/
   filter: blur(12px);    /* blur */
   -webkit-filter: blur(12px);

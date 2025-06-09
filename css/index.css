@@ -3,6 +3,16 @@
     src: url(../res/fon/Montserrat-Medium.ttf) format('truetype');
 }
 
+bg-image {
+  background-image: url(../res/img/professional\ nerd.jpg); /*img*/
+  filter: blur(12px);    /* blur */
+  -webkit-filter: blur(12px);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 body {
     background-color: #000000;
     background-blend-mode: overlay;
@@ -16,12 +26,19 @@ h1 {
     margin-top: 20px;
 }
 
-bg-image {
-  background-image: url(../res/img/professional\ nerd.jpg); /*img*/
-  filter: blur(12px);    /* blur */
-  -webkit-filter: blur(12px);
-  height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+h2 {
+    color: #FFEEDB;
+    font-family: 'Montserrat-Medium', sans-serif;
+    font-size: 1.5em;
+    text-align: center;
+    margin-top: 10px;
 }
+
+p {
+    color: #FFEEDB;
+    font-family: 'Montserrat-Medium', sans-serif;
+    font-size: 1.2em;
+    text-align: center;
+    margin-top: 10px;
+}
+

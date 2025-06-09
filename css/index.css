@@ -4,30 +4,31 @@
 }
 
 .lander {
-    position: absolute;
-    top: 100%;
-    left: 100%;
     text-align: center;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    position: static;
 }
 
-.overview {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: #FFEEDB;
-    font-family: 'Montserrat-Medium', sans-serif;
+.about-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* space between overview and about */
+    align-items: flex-start;
+    width: 100%;
 }
 
-.about {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+.overview, .about {
+    background: #303030; /* slightly lighter black */
+    border-radius: 16px;                 /* rounded edges */
+    padding: 30px 20px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.2);
+    min-width: 260px;
+    max-width: 350px;
     color: #FFEEDB;
     font-family: 'Montserrat-Medium', sans-serif;
+    text-align: center;
+    position: static;
 }
 
 

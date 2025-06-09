@@ -10,9 +10,30 @@
     text-align: center;
 }
 
+.overview {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #FFEEDB;
+    font-family: 'Montserrat-Medium', sans-serif;
+}
+
+.about {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #FFEEDB;
+    font-family: 'Montserrat-Medium', sans-serif;
+}
+
+
 .profile-pic img {
-    width: 45%;         /* Adjust size as needed */
-    height: 45%;        /* Adjust size as needed */
+    width: 150px;         /* Adjust size as needed */
+    height: 150px;        /* Adjust size as needed */
     object-fit: cover;
     border-radius: 50%;   /* This makes the image circular */
     /*border: 3px solid #FFEEDB; */

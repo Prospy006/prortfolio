@@ -12,7 +12,7 @@
     background-image: url('../res/img/professional-nerd.jpg'); /* <-- Set your image path */
     background-size: cover;
     background-position: center;
-    filter: blur(8px); /* <-- This applies the blur */
+    filter: blur(32px); /* <-- This applies the blur */
     z-index: -1;
 }
 

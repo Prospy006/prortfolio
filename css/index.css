@@ -3,17 +3,21 @@
     src: url(../res/fon/Montserrat-Medium.ttf) format('truetype');
 }
 
-.bg-image {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-image: url('../res/img/background.jpg'); /* <-- Set your image path */
-    background-size: cover;
-    background-position: center;
-    filter: blur(24px); /* <-- This applies the blur */
-    z-index: -1;
+.lander {
+    position: absolute;
+    top: 100%;
+    left: 100%;
+    text-align: center;
+}
+
+.profile-pic img {
+    width: 45%;         /* Adjust size as needed */
+    height: 45%;        /* Adjust size as needed */
+    object-fit: cover;
+    border-radius: 50%;   /* This makes the image circular */
+    /*border: 3px solid #FFEEDB; */
+    display: block;
+    margin: 0 auto;
 }
 
 body {

@@ -1,1 +1,12 @@
+body    {
+    background-color: black;
+}
+h1  {
+    color: wheat;
+    font-family: Montserrat-Medium;
+}
+@font-face {
+    font-family: 'Montserrat-Medium';
+    src: url(./res/fonts/Montserrat-Medium.ttf) format('truetype');
 
+}

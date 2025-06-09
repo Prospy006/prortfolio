@@ -8,6 +8,10 @@
     margin-top: 40px;
     margin-bottom: 30px;
     position: static;
+    height: 160px;              /* Increase vertical size */
+    display: flex;              /* Use flex to center content */
+    align-items: center;        /* Vertically center */
+    justify-content: center;    /* Horizontally center */
 }
 
 .about-wrapper {
@@ -19,12 +23,12 @@
 }
 
 .overview, .about {
-    background: #303030; /* slightly lighter black */
+    background: #0a0a0a; /* slightly lighter black */
     border-radius: 16px;                 /* rounded edges */
     padding: 30px 20px;
     box-shadow: 0 2px 16px rgba(0,0,0,0.2);
-    min-width: 260px;
-    max-width: 350px;
+    min-width: 500px;
+    max-width: 700px;
     color: #FFEEDB;
     font-family: 'Montserrat-Medium', sans-serif;
     text-align: center;
@@ -46,6 +50,12 @@ body {
     position: relative;
     background-color: #000000;
     background-blend-mode: overlay;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;     /* Firefox */
+}
+
+body::-webkit-scrollbar {
+    display: none;  /* Hide scrollbar for Chrome, Safari and Opera */
 }
 
 h1 {
@@ -71,4 +81,3 @@ p {
     text-align: center;
     margin-top: 10px;
 }
-

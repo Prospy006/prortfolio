@@ -8,9 +8,6 @@ bg-image {
   filter: blur(12px);    /* blur */
   -webkit-filter: blur(12px);
   height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 body {

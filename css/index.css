@@ -12,7 +12,7 @@
     background-image: url('../res/img/background.jpg'); /* <-- Set your image path */
     background-size: cover;
     background-position: center;
-    filter: blur(64px); /* <-- This applies the blur */
+    filter: blur(24px); /* <-- This applies the blur */
     z-index: -1;
 }
 

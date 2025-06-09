@@ -1,12 +1,13 @@
-@font-face    {
+@font-face {
     font-family: 'Montserrat-Medium';
-    src: url(./res/fon/Montserrat-Medium.ttf) format('truetype');
-
+    src: url(../res/fon/Montserrat-Medium.ttf) format('truetype');
 }
-.body    {
+
+.body {
     background-color: #000000;
 }
-.h1  {
+
+.h1 {
     color: #FFEEDB;
     font-family: 'Montserrat-Medium';
 }

@@ -9,10 +9,10 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-image: url('../res/img/professional-nerd.jpg'); /* <-- Set your image path */
+    background-image: url('../res/img/background.jpg'); /* <-- Set your image path */
     background-size: cover;
     background-position: center;
-    filter: blur(32px); /* <-- This applies the blur */
+    filter: blur(64px); /* <-- This applies the blur */
     z-index: -1;
 }
 

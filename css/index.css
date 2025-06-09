@@ -4,7 +4,7 @@
 }
 
 bg-image {
-  background-image: url(../res/img/professional\ nerd.jpg); /*img*/
+  background-image: url(../res/img/professional-nerd.jpg); /*img*/
   filter: blur(12px);    /* blur */
   -webkit-filter: blur(12px);
   height: 100%;

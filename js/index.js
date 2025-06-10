@@ -16,18 +16,29 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 // mobile accessibility
 function updateResponsiveClass() {
+    const aboutWrapper = document.querySelector('.about-wrapper');
+    const overview = document.querySelector('.overview');
+    const about = document.querySelector('.about');
+    const skills = document.querySelector('.skills');
+    const contact = document.querySelector('.contact');
+    const lander = document.querySelector('.lander');
+
     if (window.innerWidth < 1200) {
-        document.about-wrapper.classList.add('small-screen');
-        document.overview.classList.add('small-screen');
-        document.about.classList.add('small-screen');
-        document.skills.classList.add('small-screen');
-        document.contact.classList.add('small-screen');
+        aboutWrapper && aboutWrapper.classList.add('small-screen');
+        overview && overview.classList.add('small-screen');
+        about && about.classList.add('small-screen');
+        skills && skills.classList.add('small-screen');
+        contact && contact.classList.add('small-screen');
+        lander && lander.classList.add('small-screen');
+        console.log('small-screen enabled');
     } else {
-        document.about-wrapper.classList.remove('small-screen');
-        document.overview.classList.remove('small-screen');
-        document.about.classList.remove('small-screen');
-        document.skills.classList.remove('small-screen');
-        document.contact.classList.remove('small-screen');
+        aboutWrapper && aboutWrapper.classList.remove('small-screen');
+        overview && overview.classList.remove('small-screen');
+        about && about.classList.remove('small-screen');
+        skills && skills.classList.remove('small-screen');
+        contact && contact.classList.remove('small-screen');
+        lander && lander.classList.remove('small-screen');
+        console.log('small-screen disabled');
     }
 }
 window.addEventListener('resize', updateResponsiveClass);

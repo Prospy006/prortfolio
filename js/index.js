@@ -1,7 +1,7 @@
 //https://tenor.com/moVX2QjMGtk.gif
 
 document.addEventListener('DOMContentLoaded', () => {
-    const fadeElements = document.querySelectorAll('.fade-in-module');
+    const fadeElements = document.querySelectorAll('.overview', '.about');
 
     const observerOptions = { //crap which fades in trigger
         root: null,

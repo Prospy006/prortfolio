@@ -1,28 +1,17 @@
 //https://tenor.com/moVX2QjMGtk.gif
 
-document.addEventListener('DOMContentLoaded', () => {
-    const fadeElements = document.querySelectorAll('.overview, .about');
-
-    const observerOptions = { //crap which fades in trigger
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
-
+document.addEventListener("DOMContentLoaded", function() {
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-visible');
                 observer.unobserve(entry.target);
             }
-            else {
-                entry.target.classList.remove('is-visible');
-            }
         });
-    }, observerOptions);
+    }, { threshold: 0.1 });
 
-    fadeElements.forEach(element => {
-        observer.observe(element);
+    document.querySelectorAll('.overview, .about').forEach(el => {
+        observer.observe(el);
     });
 });
 // mobile accessibility
@@ -35,3 +24,22 @@ function updateResponsiveClass() {
 }
 window.addEventListener('resize', updateResponsiveClass);
 document.addEventListener('DOMContentLoaded', updateResponsiveClass);
+
+/*
+DEPRECATED fade in crap
+
+document.addEventListener("DOMContentLoaded", function() {
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.overview, .about').forEach(el => {
+        observer.observe(el);
+    });
+});
+*/ 

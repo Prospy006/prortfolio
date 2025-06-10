@@ -7,7 +7,7 @@ window.addEventListener('load', () => {
 });
 // mobile accessibility
 function updateResponsiveClass() {
-    if (window.innerWidth < 600) { // Set your threshold here
+    if (window.innerWidth < 600) {
         document.body.classList.add('small-screen');
     } else {
         document.body.classList.remove('small-screen');
@@ -18,10 +18,11 @@ document.addEventListener('DOMContentLoaded', updateResponsiveClass);
 
 // fade in for overview & about
 document.addEventListener("DOMContentLoaded", function() {
-    const observer = new IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
+                observer.unobserve(entry.target); // Only animate once
             }
         });
     }, { threshold: 0.1 });

@@ -10,16 +10,24 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('.overview, .about').forEach(el => {
+    document.querySelectorAll('.overview, .about, .skills, .contact').forEach(el => {
         observer.observe(el);
     });
 });
 // mobile accessibility
 function updateResponsiveClass() {
-    if (window.innerWidth < 600) {
-        document.body.classList.add('small-screen');
+    if (window.innerWidth < 1200) {
+        document.about-wrapper.classList.add('small-screen');
+        document.overview.classList.add('small-screen');
+        document.about.classList.add('small-screen');
+        document.skills.classList.add('small-screen');
+        document.contact.classList.add('small-screen');
     } else {
-        document.body.classList.remove('small-screen');
+        document.about-wrapper.classList.remove('small-screen');
+        document.overview.classList.remove('small-screen');
+        document.about.classList.remove('small-screen');
+        document.skills.classList.remove('small-screen');
+        document.contact.classList.remove('small-screen');
     }
 }
 window.addEventListener('resize', updateResponsiveClass);

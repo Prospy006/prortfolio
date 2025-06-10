@@ -1,9 +1,10 @@
+console.log("Animate on visible script loaded");
 document.addEventListener("DOMContentLoaded", function() {
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                observer.unobserve(entry.target); // Only animate once
+                observer.unobserve(entry.target);
             }
         });
     }, { threshold: 0.1 });

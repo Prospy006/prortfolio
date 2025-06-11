@@ -1,4 +1,6 @@
-/*FONTS*/
+/* ================
+   FONTS & HEADINGS
+   ================ */
 @font-face {
     font-family: 'Montserrat-Medium';
     src: url(../res/fon/Montserrat-Medium.ttf) format('truetype');
@@ -96,11 +98,16 @@ p {
     text-align: center;
     margin-top: 10px;
 }
-/*LANDER*/
+
+/* =================
+   WEBPAGE DIVISIONS 
+   ================= */
+
+/* LANDER */
 .lander {
     text-align: center;
     position: static;
-    height: 100vh;
+    height: 105vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -116,11 +123,6 @@ p {
     animation: fadeIn 1s cubic-bezier(0, 0, 0.45, 1.14) forwards;
     animation-delay: 1s;
 }
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-    }
-}
 .lander h3 {
     color: #EDE7D9;
     font-family: 'Montserrat-Medium', sans-serif;
@@ -131,7 +133,8 @@ p {
     animation: fadeIn 1s cubic-bezier(0, 0, 0.45, 1.14) forwards;
     animation-delay: 2s;
 }
-/*ABOUT*/
+
+/* ABOUT WRAPPER */
 .about-wrapper {
     display: flex;
     justify-content: center;
@@ -139,6 +142,12 @@ p {
     align-items: flex-start;
     width: 100%;
 }
+.about-wrapper.small-screen {
+    flex-direction: column;
+    align-items: center;
+}
+
+/* OVERVIEW & ABOUT */
 .overview, .about {
     background: #111111;
     border-radius: 16px;
@@ -151,12 +160,15 @@ p {
     position: static;
     opacity: 0;
     transform: translateY(50px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
+    transition: opacity 1s cubic-bezier(0, 0, 0.45, 1.14), transform 1s cubic-bezier(0, 0, 0.45, 1.14);
 }
+
 .overview.is-visible, .about.is-visible {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* SKILLS & CONTACT */
 .skills, .contact {
     padding: 20px 5vw;
     box-shadow: 0 2px 16px rgba(0,0,0,0.2);
@@ -168,7 +180,7 @@ p {
     position: static;
     opacity: 0;
     transform: translateY(50px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
+    transition: opacity 1s cubic-bezier(0, 0, 0.45, 1.14), transform 1s cubic-bezier(0, 0, 0.45, 1.14);
     margin-left: auto;
     margin-right: auto;
     border-radius: 16px;
@@ -178,13 +190,8 @@ p {
     opacity: 1;
     transform: translateY(0);
 }
-@media (max-width: 1200px) {
-    .skills, .contact {
-        max-width: 95vw;
-        padding: 16px 2vw;
-        font-size: 1em;
-    }
-}
+
+/* PROFILE PIC */
 .profile-pic img {
     width: 150px;
     height: 150px;
@@ -194,6 +201,8 @@ p {
     display: block;
     margin: 0 auto;
 }
+
+/* BODY & SCROLLBAR */
 body {
     position: relative;
     background-color: #000000;
@@ -212,116 +221,53 @@ body::-webkit-scrollbar {
     background: transparent;
 }
 
+/* ==========================
+   RESPONSIVE / SMALL DEVICES
+   ========================== */
 
-
-
-
-
-/*SMALL SCREEN FUNCTIONALITY*/
-
-
-
-
-
-/*LANDER*/
-.lander {
-    text-align: center;
-    position: static;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.lander h1 {
-    color: #EDE7D9;
-    font-family: 'Montserrat-Medium', sans-serif;
-    font-size: 3.5em;
-    text-align: center;
-    margin-top: 20px;
-    opacity: 0;
-    animation: fadeIn 1s cubic-bezier(0, 0, 0.45, 1.14) forwards;
-    animation-delay: 1s;
-}
-.lander h3 {
-    color: #EDE7D9;
-    font-family: 'Montserrat-Medium', sans-serif;
-    font-size: 1.2em;
-    text-align: center;
-    margin-top: 10px;
-    opacity: 0;
-    animation: fadeIn 1s cubic-bezier(0, 0, 0.45, 1.14) forwards;
-    animation-delay: 2s;
-}
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-    }
-}
-.about-wrapper.small-screen {
-    flex-direction: column;
-    align-items: center;
-}
-.overview, .about {
-    background: #111111;
-    border-radius: 16px;
-    padding: 30px 20px;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.2);
-    width: 60vh;
-    color: #EDE7D9;
-    font-family: 'Montserrat-Medium', sans-serif;
-    text-align: center;
-    position: static;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
-}
-.overview.is-visible, .about.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-.skills, .contact {
-    padding: 20px 5vw;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.2);
-    width: 100%;
-    max-width: 500px;
-    color: #EDE7D9;
-    font-family: 'Montserrat-Medium', sans-serif;
-    text-align: center;
-    position: static;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 16px;
-    margin-top: 32px;
-}
-.skills.is-visible, .contact.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-}
 @media (max-width: 1200px) {
+    .about-wrapper.small-screen {
+        flex-direction: column;
+        align-items: center;
+    }
+    .overview.small-screen, .about.small-screen {
+        width: 95vw !important;
+        max-width: 500px;
+        min-width: 0;
+        margin-left: auto;
+        margin-right: auto;
+        box-sizing: border-box;
+        padding: 32px 5vw;
+        font-size: 1.1em;
+        transition: opacity 1s cubic-bezier(0, 0, 0.45, 1.14), transform 1s cubic-bezier(0, 0, 0.45, 1.14);
+    }
+    .overview.small-screen h2,
+    .about.small-screen h2 {
+        font-size: 2em;
+    }
+    .overview.small-screen p,
+    .about.small-screen p {
+        font-size: 1.1em;
+    }
     .skills.small-screen, .contact.small-screen {
         max-width: 95vw;
         padding: 16px 2vw;
         font-size: 1em;
+        transition: opacity 1s cubic-bezier(0, 0, 0.45, 1.14), transform 1s cubic-bezier(0, 0, 0.45, 1.14);
     }
 }
-.profile-pic img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 50%;
-    /*border: 3px solid #EDE7D9;   */
-    display: block;
-    margin: 0 auto;
+@media (max-width: 600px) {
+    .overview.small-screen h2,
+    .about.small-screen h2 {
+        font-size: 1.3em;
+    }
 }
-body {
-    position: relative;
-    background-color: #000000;
-    background-blend-mode: overlay;
-    /*HIDING OVERFLOW*/
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;     /* Firefox */
+
+/* ======================
+   ANIMATIONS & KEYFRAMES
+   ====================== */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
 }

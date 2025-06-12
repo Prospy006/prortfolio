@@ -134,6 +134,18 @@ p {
     animation-delay: 2s;
 }
 
+/* LINE */
+.line-divider {
+    border-top: 2px solid #EDE7D9;
+    margin: 90vh auto;
+    transform: translateY(50px);
+    transition: opacity 1s cubic-bezier(0, 0, 0.45, 1.14), transform 1s cubic-bezier(0, 0, 0.45, 1.14);
+}
+.line-divider.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* ABOUT WRAPPER */
 .about-wrapper {
     display: flex;
@@ -141,10 +153,6 @@ p {
     gap: 40px;
     align-items: flex-start;
     width: 100%;
-}
-.about-wrapper.small-screen {
-    flex-direction: column;
-    align-items: center;
 }
 
 /* OVERVIEW & ABOUT */
@@ -229,37 +237,34 @@ body::-webkit-scrollbar {
     .about-wrapper.small-screen {
         flex-direction: column;
         align-items: center;
+        gap: 15px;
+        width: 100vw;
     }
     .overview.small-screen, .about.small-screen {
-        width: 95vw !important;
-        max-width: 500px;
+        width: 98vw !important;
+        max-width: 600px;
         min-width: 0;
         margin-left: auto;
         margin-right: auto;
         box-sizing: border-box;
-        padding: 32px 5vw;
-        font-size: 1.1em;
-        transition: opacity 1s cubic-bezier(0, 0, 0.45, 1.14), transform 1s cubic-bezier(0, 0, 0.45, 1.14);
+        padding: 40px 4vw;
+        font-size: 1.15em;
+    }
+}
+@media (max-width: 600px) {
+    .overview.small-screen, .about.small-screen {
+        width: 99vw !important;
+        max-width: 99vw;
+        padding: 32px 2vw;
+        font-size: 1.05em;
     }
     .overview.small-screen h2,
     .about.small-screen h2 {
-        font-size: 2em;
+        font-size: 1.5em;
     }
     .overview.small-screen p,
     .about.small-screen p {
         font-size: 1.1em;
-    }
-    .skills.small-screen, .contact.small-screen {
-        max-width: 95vw;
-        padding: 16px 2vw;
-        font-size: 1em;
-        transition: opacity 1s cubic-bezier(0, 0, 0.45, 1.14), transform 1s cubic-bezier(0, 0, 0.45, 1.14);
-    }
-}
-@media (max-width: 600px) {
-    .overview.small-screen h2,
-    .about.small-screen h2 {
-        font-size: 1.3em;
     }
 }
 

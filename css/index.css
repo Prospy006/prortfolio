@@ -57,21 +57,21 @@ a {
     margin-top: 10px;
 }
 a:hover {
-    color: #FFB74D;
+    color: #138808;
     text-decoration: underline;
 }
 a:visited {
     color: #EDE7D9;
 }
 a:active {
-    color: #FFB74D;
+    color: #138808;
 }
 a:focus {
     outline: none;
-    box-shadow: 0 0 0 2px rgba(255, 183, 77, 0.5);
+    box-shadow: 0 0 0 2px #355E3B80;
 }
 button {
-    background-color: #FFB74D;
+    background-color: #000000;
     color: #EDE7D9;
     font-family: 'Montserrat-Medium', sans-serif;
     font-size: 1.2em;
@@ -82,14 +82,14 @@ button {
     transition: background-color 0.3s ease;
 }
 button:hover {
-    background-color: #FF9800;
+    background-color: #138808;
 }
 button:active {
-    background-color: #F57C00;
+    background-color: #355E3B;
 }
 button:focus {
     outline: none;
-    box-shadow: 0 0 0 2px rgba(255, 183, 77, 0.5);
+    box-shadow: 0 0 0 2px #355E3B80;
 }
 p {
     color: #EDE7D9;
@@ -161,7 +161,7 @@ p {
     background: #111111;
     border-radius: 16px;
     padding: 30px 20px;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 16px #00000033;
     width: 60vh;
     color: #EDE7D9;
     font-family: 'Montserrat-Medium', sans-serif;
@@ -180,7 +180,7 @@ p {
 /* SKILLS & CONTACT */
 .skills, .contact {
     padding: 20px 5vw;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 16px #00000033;
     width: 100%;
     max-width: 500px;
     color: #EDE7D9;

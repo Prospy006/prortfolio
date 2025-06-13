@@ -1,5 +1,7 @@
 //https://tenor.com/moVX2QjMGtk.gif
 
+
+//fade in crap
 document.addEventListener("DOMContentLoaded", function() {
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
@@ -14,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
         observer.observe(el);
     });
 });
+
 // mobile accessibility
 function updateResponsiveClass() {
     const lander = document.querySelector('.lander');
@@ -60,9 +63,13 @@ function updateResponsiveClass() {
 window.addEventListener('resize', updateResponsiveClass);
 document.addEventListener('DOMContentLoaded', updateResponsiveClass);
 
-/*
-DEPRECATED fade in crap
+//twemoji import
+document.addEventListener("DOMContentLoaded", function() {
+    twemoji.parse(document.body);
+});
 
+// DEPRECATED fade in crap
+/*
 document.addEventListener("DOMContentLoaded", function() {
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {

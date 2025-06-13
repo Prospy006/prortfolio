@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('.overview, .about, .skills, .contact').forEach(el => {
+    document.querySelectorAll('.overview, .about, .skills, .contact, .line-divider').forEach(el => {
         observer.observe(el);
     });
 });
@@ -22,7 +22,9 @@ function updateResponsiveClass() {
     const lineDivider = document.querySelector('.line-divider');
     const aboutWrapper = document.querySelector('.about-wrapper');
     const overview = document.querySelector('.overview');
+    const overviewText = document.querySelector('.overview-text');
     const about = document.querySelector('.about');
+    const aboutText = document.querySelector('.about-text');
     const skills = document.querySelector('.skills');
     const contact = document.querySelector('.contact');
     
@@ -34,7 +36,9 @@ function updateResponsiveClass() {
         lineDivider && lineDivider.classList.add('small-screen');
         aboutWrapper && aboutWrapper.classList.add('small-screen');
         overview && overview.classList.add('small-screen');
+        overviewText && overview.classList.add('small-screen');
         about && about.classList.add('small-screen');
+        aboutText && overview.classList.add('small-screen');
         skills && skills.classList.add('small-screen');
         contact && contact.classList.add('small-screen');
         console.log('small-screen enabled');
@@ -45,7 +49,9 @@ function updateResponsiveClass() {
         lineDivider && lineDivider.classList.remove('small-screen');
         aboutWrapper && aboutWrapper.classList.remove('small-screen');
         overview && overview.classList.remove('small-screen');
+        overviewText && overview.classList.remove('small-screen');
         about && about.classList.remove('small-screen');
+        aboutText && overview.classList.remove('small-screen');
         skills && skills.classList.remove('small-screen');
         contact && contact.classList.remove('small-screen');
         console.log('small-screen disabled');

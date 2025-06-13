@@ -1,55 +1,50 @@
-/* ================
+/* =================
    FONTS & HEADINGS
-   ================ */
+   ================= */
 @font-face {
     font-family: 'Montserrat-Medium';
     src: url(../res/fon/Montserrat-Medium.ttf) format('truetype');
 }
-h1 {
-    color: #EDE7D9;
+h1, h2, h3, h4, h5, h6, p, a, button {
     font-family: 'Montserrat-Medium', sans-serif;
+    color: #EDE7D9;
+}
+h1 {
     font-size: 3.5em;
     text-align: center;
     margin-top: 20px;
 }
 h2 {
-    color: #EDE7D9;
-    font-family: 'Montserrat-Medium', sans-serif;
     font-size: 2.5em;
     text-align: center;
     margin-top: 10px;
 }
 h3 {
-    color: #EDE7D9;
-    font-family: 'Montserrat-Medium', sans-serif;
     font-size: 2em;
     text-align: center;
     margin-top: 10px;
 }
 h4 {
-    color: #EDE7D9;
-    font-family: 'Montserrat-Medium', sans-serif;
     font-size: 1.5em;
     text-align: center;
     margin-top: 10px;
 }
 h5 {
-    color: #EDE7D9;
-    font-family: 'Montserrat-Medium', sans-serif;
     font-size: 1em;
     text-align: center;
     margin-top: 10px;
 }
 h6 {
-    color: #EDE7D9;
-    font-family: 'Montserrat-Medium', sans-serif;
     font-size: 0.9em;
     text-align: center;
     margin-top: 10px;
 }
+p {
+    font-size: 1.2em;
+    text-align: center;
+    margin-top: 10px;
+}
 a {
-    color: #EDE7D9;
-    font-family: 'Montserrat-Medium', sans-serif;
     font-size: 1.2em;
     text-decoration: none;
     text-align: center;
@@ -72,8 +67,6 @@ a:focus {
 }
 button {
     background-color: #000000;
-    color: #EDE7D9;
-    font-family: 'Montserrat-Medium', sans-serif;
     font-size: 1.2em;
     border: none;
     border-radius: 8px;
@@ -91,19 +84,10 @@ button:focus {
     outline: none;
     box-shadow: 0 0 0 2px #355E3B80;
 }
-p {
-    color: #EDE7D9;
-    font-family: 'Montserrat-Medium', sans-serif;
-    font-size: 1.2em;
-    text-align: center;
-    margin-top: 10px;
-}
 
-/* =================
-   WEBPAGE DIVISIONS 
-   ================= */
-
-/* LANDER */
+/* ================
+   LANDER SECTION
+   ================ */
 .lander {
     text-align: center;
     position: static;
@@ -114,30 +98,24 @@ p {
     justify-content: center;
 }
 .lander h1 {
-    color: #EDE7D9;
-    font-family: 'Montserrat-Medium', sans-serif;
-    font-size: 3.5em;
-    text-align: center;
-    margin-top: 20px;
     opacity: 0;
     animation: fadeIn 1s cubic-bezier(0, 0, 0.45, 1.14) forwards;
     animation-delay: 1s;
 }
 .lander h3 {
-    color: #EDE7D9;
-    font-family: 'Montserrat-Medium', sans-serif;
     font-size: 1.2em;
-    text-align: center;
-    margin-top: 10px;
     opacity: 0;
     animation: fadeIn 1s cubic-bezier(0, 0, 0.45, 1.14) forwards;
     animation-delay: 2s;
 }
 
-/* LINE */
+/* ================
+   LINE DIVIDER
+   ================ */
 .line-divider {
     border-top: 2px solid #EDE7D9;
     margin: auto 20px;
+    padding: 25px 0;
     opacity: 0;
     transform: translateY(50px);
     transition: opacity 1s cubic-bezier(0, 0, 0.45, 1.14), transform 1s cubic-bezier(0, 0, 0.45, 1.14);
@@ -147,7 +125,9 @@ p {
     transform: translateY(0);
 }
 
-/* ABOUT WRAPPER */
+/* =================
+   ABOUT WRAPPER
+   ================= */
 .about-wrapper {
     display: flex;
     justify-content: center;
@@ -156,73 +136,109 @@ p {
     width: 100%;
 }
 
-/* OVERVIEW & ABOUT */
+/* =================
+   OVERVIEW & ABOUT
+   ================= */
 .overview, .about {
-    background: #111111;
+    position: relative;
+    background: #161315;
     border-radius: 16px;
     padding: 30px 20px;
     box-shadow: 0 2px 16px #00000033;
     width: 60vh;
     color: #EDE7D9;
-    font-family: 'Montserrat-Medium', sans-serif;
     text-align: center;
-    position: static;
     opacity: 0;
     transform: translateY(50px);
     transition: opacity 1s cubic-bezier(0, 0, 0.45, 1.14), transform 1s cubic-bezier(0, 0, 0.45, 1.14);
+    z-index: 1;
+    overflow: visible;
 }
-
 .overview.is-visible, .about.is-visible {
     opacity: 1;
     transform: translateY(0);
 }
+.overview::before, .about::before {
+    content: "";
+    position: absolute;
+    top: -8px; left: -8px; right: -8px; bottom: -8px;
+    border-radius: 24px;
+    z-index: -2;
+    opacity: 0;
+    background: conic-gradient(from var(--angle, 0deg),
+        #138808 0%,
+        #355E3B 25%,
+        #138808 50%,
+        #355E3B 75%,
+        #138808 100%
+    );
+    transition: opacity 0.3s;
+    pointer-events: none;
+    animation: none;
+}
+.overview:hover::before, .about:hover::before {
+    opacity: 1;
+    animation: spinGradient 6s linear infinite;
+}
+.overview::after, .about::after {
+    content: "";
+    position: absolute;
+    top: 8px; left: 8px; right: 8px; bottom: 8px;
+    border-radius: 16px;
+    z-index: -1;
+    background: #161315;
+    pointer-events: none;
+}
 
-/* SKILLS & CONTACT */
+/* =================
+   SKILLS & CONTACT
+   ================= */
 .skills, .contact {
-    padding: 20px 5vw;
-    box-shadow: 0 2px 16px #00000033;
+    background: none;
+    box-shadow: none;
+    max-width: none;
     width: 100%;
-    max-width: 500px;
     color: #EDE7D9;
-    font-family: 'Montserrat-Medium', sans-serif;
     text-align: center;
     position: static;
     opacity: 0;
     transform: translateY(50px);
     transition: opacity 1s cubic-bezier(0, 0, 0.45, 1.14), transform 1s cubic-bezier(0, 0, 0.45, 1.14);
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 16px;
-    margin-top: 32px;
+    margin: 32px 0 0 0;
+    border-radius: 0;
+    padding: 0;
 }
 .skills.is-visible, .contact.is-visible {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* PROFILE PIC */
+/* =================
+   PROFILE PIC
+   ================= */
 .profile-pic img {
     width: 150px;
     height: 150px;
     object-fit: cover;
     border-radius: 50%;
-    /*border: 3px solid #EDE7D9;   */
+    /*border: 3px solid #EDE7D9;*/
     display: block;
     margin: 0 auto;
 }
 
-/* BODY & SCROLLBAR */
+/* =================
+   BODY & SCROLLBAR
+   ================= */
 body {
     position: relative;
     background-color: #000000;
     background-blend-mode: overlay;
-    /*HIDING OVERFLOW*/
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;     /* Firefox */
 }
 body::-webkit-scrollbar {
     width: 0px;
-    display: none;  /* Chrome, Safari and Opera */
+    display: none;
     background: transparent;
 }
 *::-webkit-scrollbar {
@@ -233,7 +249,6 @@ body::-webkit-scrollbar {
 /* ==========================
    RESPONSIVE / SMALL DEVICES
    ========================== */
-
 @media (max-width: 1200px) {
     .about-wrapper.small-screen {
         flex-direction: column;
@@ -241,9 +256,13 @@ body::-webkit-scrollbar {
         gap: 15px;
         width: 100vw;
     }
+    .about-text.small-screen {
+        max-width: 350px;
+        margin: 0 auto;
+    }
     .overview.small-screen, .about.small-screen {
         width: 98vw !important;
-        max-width: 600px;
+        max-width: 950px;
         min-width: 0;
         margin-left: auto;
         margin-right: auto;
@@ -276,4 +295,22 @@ body::-webkit-scrollbar {
     to {
         opacity: 1;
     }
+}
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+@keyframes spinGradient {
+    to {
+        --angle: 360deg;
+    }
+}
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
 }

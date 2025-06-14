@@ -2,45 +2,62 @@
     font-family: 'Montserrat-Medium';
     src: url(../res/fon/Montserrat-Medium.ttf) format('truetype');
 }
-h1, h2, h3, h4, h5, h6, p, a, button {
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+button {
     font-family: 'Montserrat-Medium', sans-serif;
     color: #EDE7D9;
 }
+
 h1 {
     font-size: 3.5em;
     text-align: center;
     margin-top: 20px;
 }
+
 h2 {
     font-size: 2.5em;
     text-align: center;
     margin-top: 10px;
 }
+
 h3 {
     font-size: 2em;
     text-align: center;
     margin-top: 10px;
 }
+
 h4 {
     font-size: 1.5em;
     text-align: center;
     margin-top: 10px;
 }
+
 h5 {
     font-size: 1em;
     text-align: center;
     margin-top: 10px;
 }
+
 h6 {
     font-size: 0.9em;
     text-align: center;
     margin-top: 10px;
 }
+
 p {
     font-size: 1.2em;
     text-align: center;
     margin-top: 10px;
 }
+
 a {
     font-size: 1.2em;
     text-decoration: none;
@@ -48,20 +65,25 @@ a {
     display: inline-block;
     margin-top: 10px;
 }
+
 a:hover {
     color: #138808;
     text-decoration: underline;
 }
+
 a:visited {
     color: #EDE7D9;
 }
+
 a:active {
     color: #138808;
 }
+
 a:focus {
     outline: none;
     box-shadow: 0 0 0 2px #355E3B80;
 }
+
 button {
     background-color: #000000;
     border: none;
@@ -72,20 +94,25 @@ button {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
+
 button:hover {
     background-color: #138808;
 }
+
 button:active {
     background-color: #355E3B;
 }
+
 button:focus {
     outline: none;
     box-shadow: 0 0 0 2px #355E3B80;
 }
 
+
 /* ================
    LANDER SECTION
    ================ */
+
 .lander {
     position: static;
     display: flex;
@@ -95,11 +122,13 @@ button:focus {
     height: 105vh;
     text-align: center;
 }
+
 .lander h1 {
     opacity: 0;
     animation: fadeIn 1s cubic-bezier(0, 0, 0.45, 1.14) forwards;
     animation-delay: 1s;
 }
+
 .lander h3 {
     font-size: 1.2em;
     opacity: 0;
@@ -107,9 +136,11 @@ button:focus {
     animation-delay: 2s;
 }
 
+
 /* ================
    LINE DIVIDER
    ================ */
+
 .line-divider {
     border-top: 2px solid #EDE7D9;
     margin: auto 20px;
@@ -118,14 +149,17 @@ button:focus {
     transform: translateY(50px);
     transition: opacity 1s cubic-bezier(0, 0, 0.45, 1.14), transform 1s cubic-bezier(0, 0, 0.45, 1.14);
 }
+
 .line-divider.is-visible {
     opacity: 1;
     transform: translateY(0);
 }
 
+
 /* =================
    ABOUT WRAPPER
    ================= */
+
 .about-wrapper {
     display: flex;
     justify-content: center;
@@ -138,10 +172,13 @@ button:focus {
     margin-right: auto;
 }
 
+
 /* =================
    OVERVIEW & ABOUT
    ================= */
-.overview, .about {
+
+.overview,
+.about {
     position: relative;
     display: block;
     z-index: 1;
@@ -164,54 +201,64 @@ button:focus {
     word-break: break-word;
     overflow-wrap: break-word;
 }
-.overview.is-visible, .about.is-visible {
+
+.overview.is-visible,
+.about.is-visible {
     opacity: 1;
     transform: translateY(0);
 }
-.overview::before, .about::before {
+
+.overview::before,
+.about::before {
     content: "";
     position: absolute;
-    z-index: -2;
-    top: -6px; left: -6px; right: -6px; bottom: -6px;
+    z-index: -3;
+    top: -6px;
+    left: -6px;
+    right: -6px;
+    bottom: -6px;
     border-radius: 24px;
     opacity: 0;
-    background: conic-gradient(
-        from var(--angle, 0deg),
-        #A259F7 0%,
-        #7F5AF0 10%,
-        #00CFFD 30%,
-        #FF61A6 50%,
-        #FFD700 70%,
-        #A259F7 90%,
-        #7F5AF0 100%
-    );
+    background: conic-gradient( from var(--angle, 0deg), #A259F7 0%, #7F5AF0 10%, #00CFFD 30%, #FF61A6 50%, #FFD700 70%, #A259F7 90%, #7F5AF0 100%);
     transition: opacity 0.3s;
     pointer-events: none;
     animation: none;
 }
-.overview:hover::before, .about:hover::before {
+
+.overview:hover::before,
+.about:hover::before {
     opacity: 1;
     animation: spinGradient 6s linear infinite;
 }
-.overview:hover, .about:hover {
+
+.overview:hover,
+.about:hover {
     z-index: 2;
     transform: scale(1.06) translateY(0);
     box-shadow: 0 4px 32px #00000066;
 }
-.overview::after, .about::after {
+
+.overview::after,
+.about::after {
     content: "";
     position: absolute;
     z-index: -1;
-    top: 0; left: 0; right: 0; bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     border-radius: 16px;
     background: #161315;
     pointer-events: none;
 }
 
+
 /* =================
    SKILLS & CONTACT
    ================= */
-.skills, .contact {
+
+.skills,
+.contact {
     position: static;
     width: 100%;
     max-width: none;
@@ -226,14 +273,18 @@ button:focus {
     transition: opacity 1s cubic-bezier(0, 0, 0.45, 1.14), transform 1s cubic-bezier(0, 0, 0.45, 1.14);
     box-shadow: none;
 }
-.skills.is-visible, .contact.is-visible {
+
+.skills.is-visible,
+.contact.is-visible {
     opacity: 1;
     transform: translateY(0);
 }
 
+
 /* =================
    PROFILE PIC
    ================= */
+
 .profile-pic img {
     display: block;
     width: 150px;
@@ -243,9 +294,11 @@ button:focus {
     margin: 0 auto;
 }
 
+
 /* =================
    BODY & SCROLLBAR
    ================= */
+
 body {
     position: relative;
     background-color: #000000;
@@ -253,19 +306,23 @@ body {
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
+
 body::-webkit-scrollbar {
     width: 0px;
     display: none;
     background: transparent;
 }
+
 *::-webkit-scrollbar {
     width: 0px;
     background: transparent;
 }
 
+
 /* ==========================
    RESPONSIVE / SMALL DEVICES
    ========================== */
+
 @media (max-width: 1200px) {
     .about-wrapper.small-screen {
         flex-direction: column;
@@ -273,7 +330,8 @@ body::-webkit-scrollbar {
         gap: 15px;
         width: 100vw;
     }
-    .overview.small-screen, .about.small-screen {
+    .overview.small-screen,
+    .about.small-screen {
         width: 80vw !important;
         max-width: 98vw;
         min-width: 0;
@@ -289,8 +347,10 @@ body::-webkit-scrollbar {
         height: auto !important;
     }
 }
+
 @media (max-width: 600px) {
-    .overview.small-screen, .about.small-screen {
+    .overview.small-screen,
+    .about.small-screen {
         width: 99vw !important;
         max-width: 99vw;
         min-width: 0;
@@ -314,14 +374,17 @@ body::-webkit-scrollbar {
     }
 }
 
+
 /* ======================
    ANIMATIONS & KEYFRAMES
    ====================== */
+
 @keyframes fadeIn {
     to {
         opacity: 1;
     }
 }
+
 @keyframes gradientMove {
     0% {
         background-position: 0% 50%;
@@ -330,11 +393,13 @@ body::-webkit-scrollbar {
         background-position: 100% 50%;
     }
 }
+
 @keyframes spinGradient {
     to {
         --angle: 360deg;
     }
 }
+
 @property --angle {
     syntax: "<angle>";
     initial-value: 0deg;

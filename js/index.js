@@ -1,7 +1,7 @@
 //https://tenor.com/moVX2QjMGtk.gif
 
 
-//fade in crap
+// fade in crap
 document.addEventListener("DOMContentLoaded", function() {
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('.overview, .about, .skills, .contact, .line-divider').forEach(el => {
+    document.querySelectorAll('.overview, .about, .works, .work-panel, .skills, .contact, .line-divider').forEach(el => {
         observer.observe(el);
     });
 });
@@ -28,6 +28,8 @@ function updateResponsiveClass() {
     const overviewText = document.querySelector('.overview-text');
     const about = document.querySelector('.about');
     const aboutText = document.querySelector('.about-text');
+    const works = document.querySelector('.works');
+    const workPanel = document.querySelector('.work-panel');
     const skills = document.querySelector('.skills');
     const contact = document.querySelector('.contact');
     
@@ -42,6 +44,8 @@ function updateResponsiveClass() {
         overviewText && overview.classList.add('small-screen');
         about && about.classList.add('small-screen');
         aboutText && overview.classList.add('small-screen');
+        works && works.classList.add('small-screen');
+        workPanel && workPanel.classList.add('small-screen');
         skills && skills.classList.add('small-screen');
         contact && contact.classList.add('small-screen');
         console.log('small-screen enabled');
@@ -55,6 +59,8 @@ function updateResponsiveClass() {
         overviewText && overview.classList.remove('small-screen');
         about && about.classList.remove('small-screen');
         aboutText && overview.classList.remove('small-screen');
+        works && works.classList.remove('small-screen');
+        workPanel && workPanel.classList.add('small-screen');
         skills && skills.classList.remove('small-screen');
         contact && contact.classList.remove('small-screen');
         console.log('small-screen disabled');
@@ -63,9 +69,66 @@ function updateResponsiveClass() {
 window.addEventListener('resize', updateResponsiveClass);
 document.addEventListener('DOMContentLoaded', updateResponsiveClass);
 
-//twemoji import
+// twemoji import
 document.addEventListener("DOMContentLoaded", function() {
     twemoji.parse(document.body);
+});
+
+// lenis
+const lenis = new Lenis({
+    lerp: 0.06,
+    smooth: true,
+    direction: 'vertical',
+    gestureOrientation: 'vertical',
+    smoothWheel: true,
+    smoothTouch: false
+});
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
+
+// removed scroll restoration
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+
+window.addEventListener('load', () => {
+    const html     = document.documentElement;
+    const body     = document.body;
+    const scroller = document.scrollingElement || html || body;
+
+    // kill scrolling
+    lenis.stop();
+    lenis.scrollTo(0, { immediate: true });
+    scroller.scrollTop = 0;
+    window.scrollTo(0, 0);
+
+    // lock html
+    html.style.position = 'fixed';
+    html.style.top      = '0';
+    html.style.left     = '0';
+    html.style.width    = '100%';
+    html.style.height   = '100%';
+    html.style.overflow = 'hidden';
+    body.style.overflow = 'hidden';
+
+    // unlock html
+    setTimeout(() => {
+        html.style.position = '';
+        html.style.top      = '';
+        html.style.left     = '';
+        html.style.width    = '';
+        html.style.height   = '';
+        html.style.overflow = '';
+        body.style.overflow = '';
+
+        // revive scrolling
+        lenis.start();
+    }, 3000);
 });
 
 // DEPRECATED fade in crap

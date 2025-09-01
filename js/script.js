@@ -87,10 +87,10 @@ window.addEventListener('load', () => {
 
 async function runSecretCode() {
   const userCode = prompt("Enter the secret code:");
-  const response = await fetch("/trigger", {
+  const response = await fetch("https://treasure-hunt-backend-temp.vercel.app/api/trigger", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ user_code: userCode })
+    body: JSON.stringify({ user_code: prompt("Enter the secret code:") })
   });
 
   const result = await response.text();

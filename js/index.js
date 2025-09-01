@@ -131,6 +131,39 @@ window.addEventListener('load', () => {
     }, 3000);
 });
 
+
+
+
+
+async function runSecretCode() {
+    const userCode = prompt("Enter the secret code:");
+    const response = await fetch("https://api.github.com/repos/Prospy006/prortfolio/actions/workflows/validate-code.yml/dispatches", {
+        method: "POST",
+        headers: {
+            "Authorization": "Bearer <x>",
+            "Accept": "application/vnd.github+json",
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            ref: "main",
+            inputs: {
+                user_code: userCode
+            }
+        })
+    });
+
+    if (response.ok) {
+        alert("workflow trigger works");
+    } else {
+        alert("failure");
+    }
+}
+
+
+
+
+
+
 // DEPRECATED fade in crap
 /*
 document.addEventListener("DOMContentLoaded", function() {
